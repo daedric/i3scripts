@@ -4,6 +4,8 @@ import os
 import stat
 import i3
 
+
+# This has been inspired from i3minator
 def i3exec(cmd, sleep=0.1, root=None):
   print "Execute: {}".format(cmd)
   with tempfile.NamedTemporaryFile("w") as temp:
