@@ -4,7 +4,10 @@ i3scripts
 create_worspace.py
 ==================
 
-Propose to create a workspace according to the conf files.
+Propose to create a workspace according to the conf files.  The workspaces will
+be looked up in the directory `~/.i3/workspaces`.  In the directory examples
+you can find what it is possible to achieve so far.
+
 
 select_child.py
 ===============

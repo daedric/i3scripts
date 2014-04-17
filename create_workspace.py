@@ -10,7 +10,8 @@ from utils.container import Container
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
-workspaces = os.path.join(current_dir, "workspaces")
+workspaces = os.path.join("~", ".i3", "workspaces")
+workspaces = os.path.expanduser(workspaces)
 workspaces = [file for file in os.listdir(workspaces) if file.endswith(".conf")]
 workspace = dmenu([os.path.splitext(w)[0] for w in workspaces])
 workspace = workspace.strip()
