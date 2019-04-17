@@ -19,11 +19,11 @@ class Container:
 
     def run(self, root=None):
         if self.command:
-            command = self.command.format(container=self)
+            command = self.command.format(container=self, root=root)
             i3exec(command, root=root, sleep=self.delay)
         elif self.run_in_term:
-            self.run_in_term = self.run_in_term.format(container=self)
-            command = 'i3-sensible-terminal -title {container.title} -e ${{SHELL}} -i -c "{container.run_in_term}"'.format(container=self)
+            self.run_in_term = self.run_in_term.format(container=self, root=root)
+            command = 'i3-sensible-terminal -title {container.title} -e $SHELL -i -c "{container.run_in_term}"'.format(container=self, root=root)
             i3exec(command, root=root, sleep=self.delay)
         else:
             raise Exception("no command")
