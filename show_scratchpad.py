@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 import i3
 from utils import workspaces, dmenu
@@ -11,6 +11,7 @@ l = []
 i = 0
 for id, child in get_scratchpad_children().iteritems():
     name, mark = child["name"], child["mark"]
+    name = name.encode('utf-8')
     if mark:
         str = "{} - {} - {}".format(i, name, mark)
     else:
